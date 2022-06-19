@@ -1,3 +1,139 @@
+* {
+  user-select: none;
+  text-align: center;
+  margin: 0;
+  font-size: 1em;
+  list-style: none;
+}
 
+.navbar {
+  width: 100%;
+  max-height: 8em;
+  background-color: #141414;
+  border-bottom: 1px solid #e5e5e5;
+  grid-template-columns: 1fr auto auto;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: auto;
+  padding: .5rem;
+  display: grid;
+}
+
+.navLink {
+  grid-column-start: 1;
+}
+
+.logo {
+  width: 90px;
+  height: 90px;
+  margin: auto;
+}
+
+.music {
+  width: 90px;
+  height: 90px;
+  margin-right: 1rem;
+}
+
+h1 {
+  color: #050505;
+  text-align: center;
+  margin: 5px;
+  padding: .5rem;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.h {
+  opacity: 0;
+}
+
+#hangmandDraw {
+  height: 10em;
+  width: 11em;
+  margin: 0 auto;
+}
+
+.head {
+  width: 40px;
+  height: 40px;
+  background-color: #fc9;
+  border-radius: 50%;
+  position: fixed;
+  top: 320px;
+  left: 180px;
+}
+
+.body {
+  width: 40px;
+  height: 50px;
+  background-color: #006;
+  position: fixed;
+  top: 360px;
+  left: 180px;
+}
+
+.leftarm {
+  width: 15px;
+  height: 35px;
+  background-color: #0b0ba7b2;
+  position: fixed;
+  top: 360px;
+  left: 165px;
+}
+
+.rightarm {
+  width: 15px;
+  height: 35px;
+  background-color: #0b0ba7b2;
+  position: fixed;
+  top: 360px;
+  left: 220px;
+}
+
+.leftleg {
+  width: 18px;
+  height: 35px;
+  background-color: #161666cc;
+  position: fixed;
+  top: 410px;
+  left: 180px;
+}
+
+.rightleg {
+  width: 18px;
+  height: 35px;
+  background-color: #161666cc;
+  position: fixed;
+  top: 410px;
+  left: 200px;
+}
+
+.poleh {
+  width: 10px;
+  height: 130px;
+  background-color: #000;
+  position: fixed;
+  top: 280px;
+  left: 120px;
+}
+
+.polev {
+  width: 100px;
+  height: 10px;
+  background-color: #000;
+  position: fixed;
+  top: 280px;
+  left: 120px;
+}
+
+.rope {
+  width: 6px;
+  height: 40px;
+  background-color: #963;
+  position: fixed;
+  top: 290px;
+  left: 200px;
+}
 
 /*# sourceMappingURL=index.61d3354a.css.map */

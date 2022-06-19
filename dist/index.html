@@ -2,12 +2,64 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>My First Parcel App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
     <link rel="stylesheet" href="/index.61d3354a.css">
     
   </head>
   <body>
-    <h1>Hello, World!</h1>
+    <nav>
+      <ul class="navbar">
+        <!-- @note Logo -->
+        <li class="navItems">
+          <img class="logo" src="/logo.73091252.png" alt="logo">
+        </li>
+        <!-- @note music -->
+        <li class="navItems">
+          
+          <img class="music" src="/musicOn.26b3dc60.svg" alt="music">
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <h1><b>Try to guess the hidden word!</b><br> You can guess either one letter at a time or the whole word, but if you get the word wrong you lose 2 guesses!</h1>
+
+      <div id="game" style="margin-bottom: 200px">
+
+        <div style="height: 2em; margin-bottom: 3em">
+          <div id="end" class="h"></div>
+        </div>
+
+        <div id="hangmanDraw">
+          <div id="hangman2" class="h poleh"></div>
+          <div id="hangman1" class="h polev"></div>
+
+          <div id="hangman3" class="h rope"></div>
+
+          <div id="hangman4" class="h head"></div>
+          <div id="hangman5" class="h body"></div>
+          <div id="hangman6" class="h leftarm"></div>
+          <div id="hangman7" class="h rightarm"></div>
+          <div id="hangman8" class="h leftleg"></div>
+          <div id="hangman9" class="h rightleg"></div>
+        </div>
+
+        <div style="height: 2em; margin-bottom: 3em">
+          <div id="guesses" class="h"></div>
+      </div>
+
+      <form style="margin-top: 6em">
+        <div id="guessbox" style="height: 8em; margin-top: 3em; bottom: 50px" class="h">
+          <div style="height: 4em">
+            Guess the word:<div id="word"></div>
+          </div>
+          <input id="guess" onkeyup="Hangman.guess(this.value); this.value=''; return false;" type="text" placeholder="Guess the word">
+        </div>
+        <div class="col-sm-3">
+          <button type="button" id="btnPlay" class="btn-lg btn-info" onkeyup="Hangman.reset(); return false;">New Game</button>
+        </div>
+      </form>
+    </div></main>
     <script src="/index.0641b553.js" defer=""></script>
   </body>
 </html>

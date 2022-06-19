@@ -503,6 +503,72 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"bNKaB":[function(require,module,exports) {
+/*Hangman Vanilla Javascript
+* @see https://github.com/John4E656F/Hangman
+* @author John4E656F
+*/ var Hangman = ()=>{
+    "use strict";
+    function Hangman1(elID) {
+        this.elId = elId;
+        this.words = [
+            "PROGRAMMER",
+            "JAVASCRIPT",
+            "HYPERTEXT",
+            "MARKUP",
+            "CASCADING",
+            "STYLESHEET",
+            "JOHN",
+            "TYPESCRIPT",
+            "GRADIENT",
+            "TAILWIND",
+            "BOOTSTRAPS"
+        ];
+    }
+    Hangman1.prototype.reset = ()=>{
+        this.STOPPED = false;
+        this.MISTAKES = 0;
+        this.GUESSES = [];
+        this.WORD = this.words[Math.floor(Math.random() * this.words.length)];
+        this.hideElementByClass("h");
+        this.showElementByIdWithContent(this.elId + "_guessbox", null);
+        this.showElementByIdWithContent(this.elId + "_word", this.getGuessedfWord());
+    };
+    Hangman1.prototype.guess = (letter)=>{
+        letter = letter.charAt(0).toUpperCase();
+        if (this.STOPPED || this.GUESSES.indexOf(letter) > -1) return;
+        this.GUESSES.push(letter);
+        this.showElementByIdWithContent(this.elId + "_word", this.getGuessedfWord());
+        this.showElementByIdWithContent(this.elId + "_guesses", this.GUESSES.join(""));
+        if (this.WORD.indexOf(letter) < 0) {
+            this.MISTAKES++;
+            this.showElementByIdWithContent(this.elId + "_" + this.MISTAKES, null);
+            if (this.MISTAKES === 6) {
+                this.showElementByIdWithContent(this.elID + "_end", "GAME OVER!<br>The word was:" + this.WORD);
+                this.STOPPED = true;
+            }
+        } else if (this.WORD.indexOf(this.getGuessedfWord()) !== -1) {
+            this.showElementByIdWithContent(this.elId + "_end", "You made it!<br>The word was:" + this.WORD);
+            this.STOPPED = true;
+        }
+    };
+    /*
+    * @param {string} elId
+    * @param {HTML} content
+    */ Hangman1.prototype.showElementByIdWithContent = (elId, content)=>{
+        if (content !== null) document.getElementById(elID).innerHTML = content;
+        document.getElementById(elId).style.opacity = 1;
+    };
+    Hangman1.prototype.hideElementByClass = (elClass)=>{
+        var elements = document.getElementsByClassName(elClass), i;
+        for(i = 0; i < elements.length; i++)elements[i].style.opacity = 1;
+    };
+    Hangman1.prototype.getGuessedfWord = ()=>{
+        var result = "", i;
+        for(i = 0; i < this.WORD.length; i++)result += this.GUESSES.indexOf(this.WORD[i]) > -1 ? this.WORD[i] : "_";
+        return result;
+    };
+    return new Hangman1(game);
+};
 
 },{}]},["7Z9ix","bNKaB"], "bNKaB", "parcelRequire716c")
 

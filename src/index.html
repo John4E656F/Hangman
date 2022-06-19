@@ -2,12 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>My First Parcel App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
     <link rel="stylesheet" href="index.css" />
     
   </head>
   <body>
-    <h1>Hello, World!</h1>
+    <nav class="wrapper">
+      <img src="./assets/logo.png" alt="john4e656f hangman logo" />
+      <h2>Vanilla Javascript Hangman Game</h2>
+      <p>
+        Guess the world using the alphabet below, and click hint to get a clue.
+      </p>
+    </nav>
+
+    <main class="wrapper">
+      <div class="alphabetBtn" id="alphabetBtn"></div>
+      <p id="categoryName"></p>
+      <div id="answer"></div>
+      <p id="hp"></p>
+      <p id="clue">Clue</p>
+      <canvas id="stickman">You Browser does NOT support HTML5 Canvas tag</canvas>
+    </main>
+
+    <div class="container">
+      <button class="btn" id="hint">Hint</button>
+      <button class="btn" id="reset">Play again</button>
+    </div>
+
     <script type="module" src="app.js"></script>
   </body>
 </html>
